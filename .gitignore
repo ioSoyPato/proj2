@@ -1,0 +1,8 @@
+credentials.env
+**/.env.local
+.screens/
+.DS_Store
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/dist/

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "J1",
+    "name": "M.Sc. Carlos Peña (quant desk)",
+    "qualified": [
+      "FE103",
+      "FE106",
+      "FE302",
+      "FE305",
+      "FE502",
+      "FE503",
+      "FE702",
+      "FE705"
+    ],
+    "cost_per_section": 3530,
+    "lead_time_weeks": 2,
+    "max_sections": 2,
+    "available_patterns": [
+      5,
+      6,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "J2",
+    "name": "M.Sc. Lucía Torres (risk consultant)",
+    "qualified": [
+      "FE103",
+      "FE106",
+      "FE303",
+      "FE501",
+      "FE503",
+      "FE702",
+      "FE705"
+    ],
+    "cost_per_section": 3900,
+    "lead_time_weeks": 2,
+    "max_sections": 2,
+    "available_patterns": [
+      5,
+      6,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "J3",
+    "name": "M.Sc. Omar Delgado (data scientist)",
+    "qualified": [
+      "FE101",
+      "FE105",
+      "FE305",
+      "FE306",
+      "FE504",
+      "FE505",
+      "FE701",
+      "FE704"
+    ],
+    "cost_per_section": 3350,
+    "lead_time_weeks": 2,
+    "max_sections": 2,
+    "available_patterns": [
+      5,
+      6,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "J4",
+    "name": "Lic. Fernanda Ríos (central bank economist)",
+    "qualified": [
+      "FE104",
+      "FE304",
+      "FE503",
+      "FE506",
+      "FE702",
+      "FE705",
+      "FE706"
+    ],
+    "cost_per_section": 3940,
+    "lead_time_weeks": 2,
+    "max_sections": 2,
+    "available_patterns": [
+      5,
+      6,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "J5",
+    "name": "M.Sc. Iván Zamora (actuary)",
+    "qualified": [
+      "FE101",
+      "FE102",
+      "FE301",
+      "FE306",
+      "FE507",
+      "FE703"
+    ],
+    "cost_per_section": 3660,
+    "lead_time_weeks": 2,
+    "max_sections": 2,
+    "available_patterns": [
+      5,
+      6,
+      12,
+      13
+    ]
+  }
+]

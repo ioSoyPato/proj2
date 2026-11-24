@@ -1,0 +1,11 @@
+# Runtime (installs on Python 3.12 and 3.14)
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+pydantic==2.13.5
+# DLA solver: Gurobi's pip wheel ships a size-limited licence (<=2000 vars/constraints),
+# enough for the lookahead MILP. Set GRB_LICENSE_FILE for a full licence.
+# If it fails to import or licence-checks, the code falls back to scipy's HiGHS.
+gurobipy==14.0.0

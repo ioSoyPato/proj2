@@ -1,0 +1,14 @@
+**/.git
+**/.venv
+**/node_modules
+**/dist
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.DS_Store
+**/.env
+!frontend/.env.production
+backend/data/raw
+backend/data/_tmp
+backend/data/*.log
+**/credentials.env

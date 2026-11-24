@@ -1,0 +1,20 @@
+# One command for the whole lab:
+#   docker compose up --build
+#   -> http://localhost:8000   (portal with all three apps)
+#
+# Each project keeps its own single-image Dockerfile and can still run alone.
+services:
+  portfolio:
+    build: ./project-a-behavioral-portfolio
+    ports: ["8001:8000"]
+  pricing:
+    build: ./project-b-dynamic-pricing
+    ports: ["8002:8000"]
+  scheduling:
+    build: ./project-c-course-scheduling
+    ports: ["8003:8000"]
+  portal:
+    image: nginx:1.27-alpine
+    volumes: ["./portal:/usr/share/nginx/html:ro"]
+    ports: ["8000:80"]
+    depends_on: [portfolio, pricing, scheduling]

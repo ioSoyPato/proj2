@@ -1,0 +1,26 @@
+course,name_en,name_es,semester,area,lab_required,n_sections,true_mean_2026
+FE101,Calculus I,Cálculo I,1,math,False,2,95.68
+FE102,Linear Algebra,Álgebra Lineal,1,math,False,2,96.75
+FE103,Introduction to Finance,Introducción a las Finanzas,1,fin,False,2,86.01
+FE104,Principles of Economics,Principios de Economía,1,econ,False,2,75.83
+FE105,Programming for Finance I,Programación para Finanzas I,1,prog,True,2,85.4
+FE106,Financial Accounting,Contabilidad Financiera,1,fin,False,2,92.42
+FE301,Probability Theory,Teoría de la Probabilidad,3,math,False,2,57.09
+FE302,Statistics for Finance,Estadística para Finanzas,3,math,False,2,71.36
+FE303,Corporate Finance,Finanzas Corporativas,3,fin,False,2,81.37
+FE304,Microeconomics,Microeconomía,3,econ,False,2,75.66
+FE305,Programming for Finance II,Programación para Finanzas II,3,prog,True,2,77.11
+FE306,Differential Equations,Ecuaciones Diferenciales,3,math,False,2,83.77
+FE501,Stochastic Processes,Procesos Estocásticos,5,math,False,1,38.21
+FE502,Econometrics,Econometría,5,econ,True,1,29.54
+FE503,Fixed Income Securities,Instrumentos de Renta Fija,5,fin,False,1,40.46
+FE504,Derivatives and Options Pricing,Derivados y Valuación de Opciones,5,fin,False,1,43.64
+FE505,Numerical Methods for Finance,Métodos Numéricos para Finanzas,5,prog,True,1,32.85
+FE506,Portfolio Theory,Teoría de Portafolios,5,fin,False,1,28.07
+FE507,Optimization Methods,Métodos de Optimización,5,math,False,1,27.46
+FE701,Stochastic Calculus,Cálculo Estocástico,7,math,False,1,31.89
+FE702,Financial Risk Management,Administración de Riesgos Financieros,7,fin,False,1,20.68
+FE703,Machine Learning in Finance,Aprendizaje Automático en Finanzas,7,prog,True,1,25.7
+FE704,Algorithmic Trading,Trading Algorítmico,7,prog,True,1,39.23
+FE705,Credit Risk Modeling,Modelación de Riesgo de Crédito,7,fin,False,1,25.27
+FE706,Sequential Decision Analytics,Analítica de Decisiones Secuenciales,7,math,False,1,21.36

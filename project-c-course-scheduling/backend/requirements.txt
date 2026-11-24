@@ -1,0 +1,12 @@
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+pydantic==2.13.5
+# optional: Gurobi. Its pip wheel includes a size-limited license (<=2000 vars/constraints),
+# enough for the decomposed Phase-1 stages; GRB_LICENSE_FILE in credentials.env lifts the limit.
+gurobipy==14.0.0
+# tests
+pytest==9.2.0
+httpx==0.28.1

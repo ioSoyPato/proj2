@@ -1,0 +1,42 @@
+{
+  "synthetic": true,
+  "generator_seed": 20260101,
+  "note": "Synthetic instance generated per the assignment specification (official course files were not provided). Regenerate with `python -m app.data.generator`.",
+  "cohorts": {
+    "1": [
+      "1A",
+      "1B"
+    ],
+    "3": [
+      "3A",
+      "3B"
+    ],
+    "5": [
+      "5A"
+    ],
+    "7": [
+      "7A"
+    ]
+  },
+  "blocks": [
+    "07:00",
+    "09:00",
+    "11:00",
+    "13:00",
+    "15:00",
+    "17:00",
+    "19:00"
+  ],
+  "daypairs": [
+    "MW",
+    "TT"
+  ],
+  "hours_per_section": 4,
+  "history_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

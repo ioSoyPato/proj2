@@ -1,0 +1,12 @@
+backend/.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+# secrets / user-provided data
+credentials.env
+backend/data/raw/
+backend/data/_tmp/
+backend/data/*.log

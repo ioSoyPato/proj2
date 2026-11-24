@@ -1,0 +1,11 @@
+room,name,capacity,is_lab
+A-101,Auditorium A-101,60,False
+A-102,Room A-102,52,False
+A-201,Room A-201,46,False
+A-202,Room A-202,40,False
+B-101,Room B-101,40,False
+B-102,Room B-102,36,False
+B-201,Seminar B-201,30,False
+LAB-1,Computer Lab 1,48,True
+LAB-2,Computer Lab 2,40,True
+LAB-3,Computer Lab 3,30,True

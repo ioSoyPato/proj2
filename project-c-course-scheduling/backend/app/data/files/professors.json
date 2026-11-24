@@ -1,0 +1,428 @@
+[
+  {
+    "id": "P01",
+    "name": "Dr. Ana Ramírez",
+    "area": "math",
+    "qualified": [
+      "FE101",
+      "FE102",
+      "FE301",
+      "FE305",
+      "FE306",
+      "FE505",
+      "FE701",
+      "FE706"
+    ],
+    "primary": [
+      "FE102",
+      "FE306",
+      "FE505"
+    ],
+    "min_hours": 4,
+    "max_hours": 16,
+    "preferred_patterns": [
+      4,
+      6,
+      12
+    ],
+    "unavailable_patterns": [
+      0,
+      1,
+      13
+    ]
+  },
+  {
+    "id": "P02",
+    "name": "Dr. Luis Herrera",
+    "area": "math",
+    "qualified": [
+      "FE101",
+      "FE102",
+      "FE302",
+      "FE306",
+      "FE501",
+      "FE701"
+    ],
+    "primary": [
+      "FE101",
+      "FE102",
+      "FE701"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      9,
+      11,
+      13
+    ],
+    "unavailable_patterns": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "P03",
+    "name": "Dr. Sofía Navarro",
+    "area": "math",
+    "qualified": [
+      "FE101",
+      "FE104",
+      "FE301",
+      "FE302",
+      "FE304",
+      "FE501",
+      "FE507",
+      "FE701",
+      "FE706"
+    ],
+    "primary": [
+      "FE301",
+      "FE304",
+      "FE701"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      4,
+      11,
+      13
+    ],
+    "unavailable_patterns": [
+      1,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "P04",
+    "name": "Dr. Diego Castañeda",
+    "area": "math",
+    "qualified": [
+      "FE101",
+      "FE302",
+      "FE306",
+      "FE501",
+      "FE507",
+      "FE706"
+    ],
+    "primary": [
+      "FE101",
+      "FE507",
+      "FE706"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      2,
+      3,
+      9,
+      11
+    ],
+    "unavailable_patterns": [
+      0,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "P05",
+    "name": "Dr. Mariana Ortega",
+    "area": "fin",
+    "qualified": [
+      "FE106",
+      "FE503",
+      "FE504",
+      "FE506",
+      "FE702",
+      "FE705"
+    ],
+    "primary": [
+      "FE503",
+      "FE506",
+      "FE702"
+    ],
+    "min_hours": 8,
+    "max_hours": 16,
+    "preferred_patterns": [
+      9,
+      12,
+      13
+    ],
+    "unavailable_patterns": [
+      6,
+      10
+    ]
+  },
+  {
+    "id": "P06",
+    "name": "Dr. Javier Molina",
+    "area": "fin",
+    "qualified": [
+      "FE103",
+      "FE104",
+      "FE106",
+      "FE502",
+      "FE503",
+      "FE504",
+      "FE506",
+      "FE702"
+    ],
+    "primary": [
+      "FE103",
+      "FE104",
+      "FE503"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      0,
+      3,
+      9
+    ],
+    "unavailable_patterns": [
+      4,
+      5
+    ]
+  },
+  {
+    "id": "P07",
+    "name": "Dr. Valeria Cruz",
+    "area": "fin",
+    "qualified": [
+      "FE103",
+      "FE303",
+      "FE503",
+      "FE504",
+      "FE705"
+    ],
+    "primary": [
+      "FE103",
+      "FE503",
+      "FE504"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      1,
+      3,
+      7,
+      13
+    ],
+    "unavailable_patterns": [
+      0,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "P08",
+    "name": "Dr. Andrés Salgado",
+    "area": "fin",
+    "qualified": [
+      "FE102",
+      "FE103",
+      "FE106",
+      "FE303",
+      "FE504",
+      "FE701",
+      "FE705"
+    ],
+    "primary": [
+      "FE102",
+      "FE701",
+      "FE705"
+    ],
+    "min_hours": 4,
+    "max_hours": 16,
+    "preferred_patterns": [
+      2,
+      4,
+      7
+    ],
+    "unavailable_patterns": [
+      11,
+      13
+    ]
+  },
+  {
+    "id": "P09",
+    "name": "Dr. Paula Medina",
+    "area": "econ",
+    "qualified": [
+      "FE103",
+      "FE104",
+      "FE106",
+      "FE304",
+      "FE502"
+    ],
+    "primary": [
+      "FE103",
+      "FE304",
+      "FE502"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      0,
+      4,
+      7
+    ],
+    "unavailable_patterns": [
+      2,
+      9,
+      11,
+      13
+    ]
+  },
+  {
+    "id": "P10",
+    "name": "Dr. Ricardo Fuentes",
+    "area": "econ",
+    "qualified": [
+      "FE104",
+      "FE302",
+      "FE304",
+      "FE502",
+      "FE507"
+    ],
+    "primary": [
+      "FE104",
+      "FE304",
+      "FE502"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      7,
+      8,
+      10,
+      11
+    ],
+    "unavailable_patterns": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": "P11",
+    "name": "Dr. Elena Vargas",
+    "area": "prog",
+    "qualified": [
+      "FE105",
+      "FE305",
+      "FE703",
+      "FE704"
+    ],
+    "primary": [
+      "FE305",
+      "FE703",
+      "FE704"
+    ],
+    "min_hours": 8,
+    "max_hours": 16,
+    "preferred_patterns": [
+      1,
+      4,
+      7,
+      9
+    ],
+    "unavailable_patterns": [
+      6,
+      10,
+      12
+    ]
+  },
+  {
+    "id": "P12",
+    "name": "Dr. Tomás Aguilar",
+    "area": "prog",
+    "qualified": [
+      "FE105",
+      "FE305",
+      "FE505",
+      "FE701",
+      "FE703",
+      "FE706"
+    ],
+    "primary": [
+      "FE305",
+      "FE701",
+      "FE703"
+    ],
+    "min_hours": 4,
+    "max_hours": 12,
+    "preferred_patterns": [
+      4,
+      8,
+      9,
+      11
+    ],
+    "unavailable_patterns": [
+      0,
+      10,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "P13",
+    "name": "Dr. Camila Reyes",
+    "area": "prog",
+    "qualified": [
+      "FE303",
+      "FE305",
+      "FE702",
+      "FE703",
+      "FE704"
+    ],
+    "primary": [
+      "FE305",
+      "FE703",
+      "FE704"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      3,
+      4,
+      10
+    ],
+    "unavailable_patterns": [
+      1,
+      5,
+      7
+    ]
+  },
+  {
+    "id": "P14",
+    "name": "Dr. Héctor Ibarra",
+    "area": "prog",
+    "qualified": [
+      "FE305",
+      "FE505",
+      "FE703",
+      "FE704"
+    ],
+    "primary": [
+      "FE305",
+      "FE505",
+      "FE703"
+    ],
+    "min_hours": 8,
+    "max_hours": 12,
+    "preferred_patterns": [
+      4,
+      7,
+      13
+    ],
+    "unavailable_patterns": [
+      0,
+      5,
+      8,
+      9
+    ]
+  }
+]

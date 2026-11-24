@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sequential Decisions Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  color-scheme: light;
+  --paper: #f3f1ec;
+  --raised: #fbfaf7;
+  --ink: #1b1d22;
+  --ink-soft: #4a4f5a;
+  --muted: #7a7f8a;
+  --rule: #dcd8cf;
+  --a: #00876a;  /* portfolio: gain teal */
+  --b: #c8512b;  /* pricing: box-office vermilion */
+  --c: #3f5bd0;  /* scheduling: timetable indigo */
+  --ok: #2f8f4e;
+  --down: #b23a48;
+  --bar-h: 3.25rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #121418; --raised: #1a1d23; --ink: #ecebe6; --ink-soft: #b9bcc4;
+    --muted: #868b96; --rule: #2b2f37; --a: #2fbf98; --b: #ec7a52; --c: #8197ff;
+    --ok: #4cc070; --down: #e5677a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121418; --raised: #1a1d23; --ink: #ecebe6; --ink-soft: #b9bcc4;
+  --muted: #868b96; --rule: #2b2f37; --a: #2fbf98; --b: #ec7a52; --c: #8197ff;
+  --ok: #4cc070; --down: #e5677a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 15px/1.55 "IBM Plex Sans", system-ui, sans-serif;
+  display: flex; flex-direction: column;
+  overflow-x: hidden;
+}
+header > * { flex-shrink: 0; }
+header > nav { flex-shrink: 1; }
+/* ---------- top bar ---------- */
+header {
+  height: var(--bar-h); flex-shrink: 0;
+  display: flex; align-items: stretch; gap: .25rem;
+  padding: 0 1rem; border-bottom: 1px solid var(--rule);
+  background: var(--raised);
+}
+.brand {
+  display: flex; align-items: center; gap: .55rem; margin-right: .75rem;
+  font: 650 1.02rem/1 "Fraunces", serif; letter-spacing: -.01em;
+  color: var(--ink); text-decoration: none; white-space: nowrap; cursor: pointer;
+  background: none; border: 0; padding: 0;
+}
+.brand-mark { display: inline-flex; gap: 2px; }
+.brand-mark i { width: 5px; height: 16px; border-radius: 1px; display: block; }
+.brand-mark i:nth-child(1) { background: var(--a); }
+.brand-mark i:nth-child(2) { background: var(--b); height: 11px; margin-top: 5px; }
+.brand-mark i:nth-child(3) { background: var(--c); height: 13px; margin-top: 3px; }
+nav { display: flex; align-items: stretch; gap: .1rem; overflow-x: auto; scrollbar-width: none; min-width: 0; flex-shrink: 1; }
+nav::-webkit-scrollbar { display: none; }
+.tab {
+  display: flex; align-items: center; gap: .45rem;
+  padding: 0 .8rem; border: 0; background: none; cursor: pointer;
+  color: var(--ink-soft); font: 500 .9rem "IBM Plex Sans", sans-serif;
+  border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent, var(--ink)); }
+.tab .key {
+  font: 500 .72rem "IBM Plex Mono", monospace; color: var(--accent);
+  border: 1px solid currentColor; border-radius: 3px; padding: 0 .3rem;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+.dot.up { background: var(--ok); } .dot.down { background: var(--down); }
+.spacer { flex: 1; }
+.tools { display: flex; align-items: center; gap: .4rem; }
+.tools button, .tools a {
+  font: 500 .78rem "IBM Plex Mono", monospace; color: var(--ink-soft);
+  background: none; border: 1px solid var(--rule); border-radius: 4px;
+  padding: .25rem .5rem; cursor: pointer; text-decoration: none;
+}
+.tools button:hover, .tools a:hover { color: var(--ink); border-color: var(--ink-soft); }
+.tools button[aria-pressed="true"] { color: var(--ink); background: var(--paper); }
+/* ---------- stage ---------- */
+main { flex: 1; position: relative; min-height: 0; }
+iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: var(--paper); }
+[hidden] { display: none !important; }
+/* ---------- home ---------- */
+#home { position: absolute; inset: 0; overflow-y: auto; }
+.home-inner { max-width: 68rem; margin: 0 auto; padding: clamp(2rem, 6vw, 4.5rem) 1rem 4rem; }
+.eyebrow { font: 500 .78rem "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 {
+  font: 650 clamp(2rem, 5vw, 3.4rem)/1.05 "Fraunces", serif; letter-spacing: -.025em;
+  margin: .6rem 0 1rem; max-width: 18ch;
+}
+.lede { color: var(--ink-soft); max-width: 60ch; font-size: 1.05rem; margin: 0 0 2.6rem; }
+.powell {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
+  margin-bottom: 3rem;
+}
+.powell div { background: var(--raised); padding: .8rem .9rem; }
+.powell b { display: block; font: 500 .72rem "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .04em; }
+.powell span { font-size: .88rem; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card {
+  text-align: left; cursor: pointer; font: inherit; color: inherit;
+  background: var(--raised); border: 1px solid var(--rule); border-radius: 8px;
+  padding: 1.3rem 1.3rem 1.1rem; display: flex; flex-direction: column; gap: .7rem;
+  border-top: 4px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -14px rgba(0,0,0,.35); }
+.card:focus-visible, .tab:focus-visible { outline: 2px solid var(--accent, var(--ink)); outline-offset: 2px; }
+.card-head { display: flex; align-items: center; justify-content: space-between; }
+.letter { font: 650 2.2rem/1 "Fraunces", serif; color: var(--accent); }
+.status { display: flex; align-items: center; gap: .35rem; font: 500 .72rem "IBM Plex Mono", monospace; color: var(--muted); }
+.card h2 { font: 650 1.25rem/1.2 "Fraunces", serif; margin: 0; letter-spacing: -.01em; }
+.card p { margin: 0; color: var(--ink-soft); font-size: .92rem; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: .2rem .7rem; font-size: .82rem; margin-top: auto; padding-top: .7rem; border-top: 1px dashed var(--rule); }
+.meta dt { font: 500 .72rem "IBM Plex Mono", monospace; color: var(--muted); padding-top: .12rem; }
+.meta dd { margin: 0; }
+.open { font: 500 .82rem "IBM Plex Mono", monospace; color: var(--accent); }
+.foot { margin-top: 3rem; color: var(--muted); font-size: .82rem; }
+.foot code { font-family: "IBM Plex Mono", monospace; background: var(--raised); border: 1px solid var(--rule); padding: .05rem .35rem; border-radius: 3px; }
+/* offline overlay */
+.offline {
+  position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem;
+  background: var(--paper); text-align: center;
+}
+.offline div { max-width: 30rem; }
+.offline h3 { font: 650 1.4rem "Fraunces", serif; margin: 0 0 .5rem; }
+.offline p { color: var(--ink-soft); margin: 0 0 1rem; }
+.offline code { font: .82rem "IBM Plex Mono", monospace; background: var(--raised); border: 1px solid var(--rule); padding: .5rem .7rem; border-radius: 4px; display: inline-block; }
+@media (max-width: 860px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .powell { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .powell div:last-child { grid-column: 1 / -1; }
+  .brand-text { display: none; }
+  .tab .name { display: none; }
+  .tab { padding: 0 .55rem; }
+  header { padding: 0 .6rem; }
+  #newtab { display: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <button class="brand" data-go="home" aria-label="Home">
+    <span class="brand-mark"><i></i><i></i><i></i></span>
+    <span class="brand-text" data-i18n="brand"></span>
+  </button>
+  <nav role="tablist">
+    <button class="tab" role="tab" data-go="home" data-i18n="home"></button>
+    <button class="tab" role="tab" data-go="a" style="--accent:var(--a)"><span class="key">A</span><span class="name" data-i18n="a.short"></span><span class="dot" data-dot="a"></span></button>
+    <button class="tab" role="tab" data-go="b" style="--accent:var(--b)"><span class="key">B</span><span class="name" data-i18n="b.short"></span><span class="dot" data-dot="b"></span></button>
+    <button class="tab" role="tab" data-go="c" style="--accent:var(--c)"><span class="key">C</span><span class="name" data-i18n="c.short"></span><span class="dot" data-dot="c"></span></button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="tools">
+    <a id="newtab" target="_blank" rel="noopener" hidden data-i18n="newtab"></a>
+    <button data-lang="en" aria-pressed="true">EN</button>
+    <button data-lang="es" aria-pressed="false">ES</button>
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div class="home-inner">
+      <div class="eyebrow" data-i18n="eyebrow"></div>
+      <h1 data-i18n="title"></h1>
+      <p class="lede" data-i18n="lede"></p>
+      <div class="powell">
+        <div><b>S<sub>t</sub></b><span data-i18n="p.state"></span></div>
+        <div><b>x<sub>t</sub></b><span data-i18n="p.decision"></span></div>
+        <div><b>W<sub>t+1</sub></b><span data-i18n="p.exog"></span></div>
+        <div><b>S<sup>M</sup></b><span data-i18n="p.trans"></span></div>
+        <div><b>max<sub>π</sub> 𝔼</b><span data-i18n="p.obj"></span></div>
+      </div>
+      <div class="cards">
+        <button class="card" data-go="a" style="--accent:var(--a)">
+          <div class="card-head"><span class="letter">A</span><span class="status"><span class="dot" data-dot="a"></span><span data-status="a"></span></span></div>
+          <h2 data-i18n="a.title"></h2><p data-i18n="a.desc"></p>
+          <dl class="meta"><dt data-i18n="client"></dt><dd data-i18n="a.client"></dd><dt data-i18n="methods"></dt><dd data-i18n="a.methods"></dd></dl>
+          <span class="open" data-i18n="open"></span>
+        </button>
+        <button class="card" data-go="b" style="--accent:var(--b)">
+          <div class="card-head"><span class="letter">B</span><span class="status"><span class="dot" data-dot="b"></span><span data-status="b"></span></span></div>
+          <h2 data-i18n="b.title"></h2><p data-i18n="b.desc"></p>
+          <dl class="meta"><dt data-i18n="client"></dt><dd data-i18n="b.client"></dd><dt data-i18n="methods"></dt><dd data-i18n="b.methods"></dd></dl>
+          <span class="open" data-i18n="open"></span>
+        </button>
+        <button class="card" data-go="c" style="--accent:var(--c)">
+          <div class="card-head"><span class="letter">C</span><span class="status"><span class="dot" data-dot="c"></span><span data-status="c"></span></span></div>
+          <h2 data-i18n="c.title"></h2><p data-i18n="c.desc"></p>
+          <dl class="meta"><dt data-i18n="client"></dt><dd data-i18n="c.client"></dd><dt data-i18n="methods"></dt><dd data-i18n="c.methods"></dd></dl>
+          <span class="open" data-i18n="open"></span>
+        </button>
+      </div>
+      <p class="foot" data-i18n-html="foot"></p>
+    </div>
+  </section>
+
+  <iframe id="frame-a" title="Project A" hidden></iframe>
+  <iframe id="frame-b" title="Project B" hidden></iframe>
+  <iframe id="frame-c" title="Project C" hidden></iframe>
+  <div class="offline" id="offline" hidden><div>
+    <h3 data-i18n="off.title"></h3><p data-i18n="off.body"></p><code data-i18n="off.cmd"></code>
+  </div></div>
+</main>
+
+<script>
+const PORTS = { a: 8001, b: 8002, c: 8003 };
+const host = location.hostname || "localhost";
+const urlFor = (k, lang) => `${location.protocol === "https:" ? "https" : "http"}://${host}:${PORTS[k]}/?lang=${lang}`;
+
+const T = {
+  en: {
+    brand: "Sequential Decisions Lab", home: "Overview", newtab: "open ↗",
+    eyebrow: "Financial Engineering · Powell's unified framework",
+    title: "Three decisions under uncertainty, one framework.",
+    lede: "Each project models a real client's sequential decision problem with Powell's five elements, solves it with policies from different classes (PFA, CFA, VFA, DLA) against a simple baseline, and evaluates them on 500+ common-random-number scenarios with separate tuning and evaluation seeds.",
+    "p.state": "State: what we know when we decide",
+    "p.decision": "Decision: what we control",
+    "p.exog": "Exogenous info: what the world reveals",
+    "p.trans": "Transition: how the state evolves",
+    "p.obj": "Objective: what the policy optimizes",
+    client: "client", methods: "methods", open: "Open dashboard →",
+    "a.short": "Portfolio", "a.title": "Behavioral portfolio dashboard",
+    "a.desc": "Profiles an investor with prospect theory, builds a mean-CVaR MILP portfolio, and prices the cost of their own behavior over ten years.",
+    "a.client": "Individual investor", "a.methods": "Prospect-theory profiling · MILP · block-bootstrap policy simulation",
+    "b.short": "Ticket pricing", "b.title": "Dynamic ticket pricing",
+    "b.desc": "Sets a daily concert ticket price against reference-price memory and scarcity, with demand calibrated on real Expedia flight data.",
+    "b.client": "Event promoter", "b.methods": "Pricing rules · deterministic lookahead (MILP) · reinforcement learning",
+    "c.short": "Scheduling", "c.title": "Course scheduling under uncertain enrollment",
+    "c.desc": "Builds the semester timetable with a MILP, then adjusts it week by week as registrations and professor absences arrive.",
+    "c.client": "Department head", "c.methods": "MILP · weekly re-optimization · waitlist rules",
+    up: "running", down: "offline", checking: "checking…",
+    foot: "Start everything with <code>./run-all.sh</code> or <code>docker compose up --build</code>. Each app also runs standalone; see its README.",
+    "off.title": "This app isn't running", "off.body": "The portal embeds each project from its own server. Start them all from the repository root:",
+    "off.cmd": "./run-all.sh   # or: docker compose up --build",
+  },
+  es: {
+    brand: "Laboratorio de Decisiones Secuenciales", home: "Resumen", newtab: "abrir ↗",
+    eyebrow: "Ingeniería Financiera · marco unificado de Powell",
+    title: "Tres decisiones bajo incertidumbre, un solo marco.",
+    lede: "Cada proyecto modela el problema de decisión secuencial de un cliente real con los cinco elementos de Powell, lo resuelve con políticas de distintas clases (PFA, CFA, VFA, DLA) frente a una línea base simple, y las evalúa en más de 500 escenarios con números aleatorios comunes y semillas separadas para calibración y evaluación.",
+    "p.state": "Estado: lo que sabemos al decidir",
+    "p.decision": "Decisión: lo que controlamos",
+    "p.exog": "Info. exógena: lo que el mundo revela",
+    "p.trans": "Transición: cómo evoluciona el estado",
+    "p.obj": "Objetivo: lo que la política optimiza",
+    client: "cliente", methods: "métodos", open: "Abrir tablero →",
+    "a.short": "Portafolio", "a.title": "Tablero de portafolio conductual",
+    "a.desc": "Perfila a un inversionista con teoría prospectiva, construye un portafolio media-CVaR con MILP y cuantifica el costo de su propio comportamiento a diez años.",
+    "a.client": "Inversionista individual", "a.methods": "Perfil por teoría prospectiva · MILP · simulación de políticas con block bootstrap",
+    "b.short": "Precios de boletos", "b.title": "Precios dinámicos de boletos",
+    "b.desc": "Fija el precio diario de un concierto frente a la memoria del precio de referencia y la escasez, con demanda calibrada en datos reales de vuelos de Expedia.",
+    "b.client": "Promotor de eventos", "b.methods": "Reglas de precio · lookahead determinista (MILP) · aprendizaje por refuerzo",
+    "c.short": "Horarios", "c.title": "Horarios universitarios con inscripción incierta",
+    "c.desc": "Construye el horario del semestre con un MILP y lo ajusta semana a semana conforme llegan inscripciones y ausencias de profesores.",
+    "c.client": "Jefe de departamento", "c.methods": "MILP · re-optimización semanal · reglas de lista de espera",
+    up: "en línea", down: "apagado", checking: "verificando…",
+    foot: "Arranca todo con <code>./run-all.sh</code> o <code>docker compose up --build</code>. Cada app también corre sola; ver su README.",
+    "off.title": "Esta app no está corriendo", "off.body": "El portal embebe cada proyecto desde su propio servidor. Arráncalos todos desde la raíz del repositorio:",
+    "off.cmd": "./run-all.sh   # o: docker compose up --build",
+  },
+};
+
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+};
+let lang = new URLSearchParams(location.search).get("lang") || store.get("portal-lang") || "en";
+if (!T[lang]) lang = "en";
+const status = { a: null, b: null, c: null };
+let current = "home";
+
+function render() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = T[lang][el.dataset.i18n] ?? ""; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = T[lang][el.dataset.i18nHtml] ?? ""; });
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  for (const k of Object.keys(PORTS)) {
+    document.querySelectorAll(`[data-dot="${k}"]`).forEach(d => { d.className = "dot" + (status[k] === true ? " up" : status[k] === false ? " down" : ""); });
+    document.querySelectorAll(`[data-status="${k}"]`).forEach(s => { s.textContent = T[lang][status[k] === true ? "up" : status[k] === false ? "down" : "checking"]; });
+  }
+}
+
+function go(key, push = true) {
+  current = key;
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.go === key)));
+  document.getElementById("home").hidden = key !== "home";
+  const off = document.getElementById("offline");
+  const nt = document.getElementById("newtab");
+  for (const k of Object.keys(PORTS)) {
+    const f = document.getElementById("frame-" + k);
+    const show = k === key && status[k] !== false;
+    if (show && !f.dataset.lang) { f.src = urlFor(k, lang); f.dataset.lang = lang; }
+    f.hidden = !show;
+  }
+  off.hidden = key === "home" || status[key] !== false;
+  nt.hidden = key === "home";
+  if (key !== "home") nt.href = urlFor(key, lang);
+  if (push) history.replaceState(null, "", key === "home" ? location.pathname + location.search : "#" + key);
+}
+
+async function ping(k) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 3000);
+  try {
+    // no-cors: we only need to know the server answered, not read the body
+    await fetch(`${location.protocol === "https:" ? "https" : "http"}://${host}:${PORTS[k]}/api/health`, { mode: "no-cors", signal: ctrl.signal, cache: "no-store" });
+    status[k] = true;
+  } catch { status[k] = false; }
+  clearTimeout(timer);
+}
+async function pingAll() {
+  const before = JSON.stringify(status);
+  await Promise.all(Object.keys(PORTS).map(ping));
+  render();
+  if (JSON.stringify(status) !== before) go(current, false);
+}
+
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]");
+  if (g) { go(g.dataset.go); return; }
+  const l = e.target.closest("[data-lang]");
+  if (l) {
+    lang = l.dataset.lang; store.set("portal-lang", lang); render();
+    // reload embedded apps in the new language
+    for (const k of Object.keys(PORTS)) { const f = document.getElementById("frame-" + k); delete f.dataset.lang; if (f.src) f.removeAttribute("src"); }
+    go(current, false);
+  }
+});
+
+render();
+go((location.hash || "#home").slice(1) in PORTS ? location.hash.slice(1) : "home", false);
+pingAll();
+setInterval(pingAll, 10000);
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest==9.2.0
+# only needed to refresh data/ with scripts/download_data.py
+yfinance==1.8.0

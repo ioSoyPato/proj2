@@ -1,0 +1,608 @@
+{
+  "config": {
+    "hidden": 128,
+    "rounds": 2000,
+    "n_envs": 64,
+    "updates_per_step": 2,
+    "batch": 256,
+    "lr": 0.0003,
+    "lr_final": 2.9999999999999997e-05,
+    "gamma": 1.0,
+    "buffer": 400000,
+    "eps_start": 1.0,
+    "eps_end": 0.03,
+    "eps_frac": 0.6,
+    "tau": 0.005,
+    "huber": 1.0,
+    "eval_every": 25,
+    "eval_scenarios": 200,
+    "seed": 0
+  },
+  "history": [
+    {
+      "round": 25,
+      "episodes": 1600,
+      "epsilon": 0.9806,
+      "val_revenue": 176701.65,
+      "seconds": 1.9
+    },
+    {
+      "round": 50,
+      "episodes": 3200,
+      "epsilon": 0.9604,
+      "val_revenue": 175046.7,
+      "seconds": 3.8
+    },
+    {
+      "round": 75,
+      "episodes": 4800,
+      "epsilon": 0.9402,
+      "val_revenue": 189175.85,
+      "seconds": 5.7
+    },
+    {
+      "round": 100,
+      "episodes": 6400,
+      "epsilon": 0.9199,
+      "val_revenue": 188040.45,
+      "seconds": 7.6
+    },
+    {
+      "round": 125,
+      "episodes": 8000,
+      "epsilon": 0.8997,
+      "val_revenue": 169755.2,
+      "seconds": 9.4
+    },
+    {
+      "round": 150,
+      "episodes": 9600,
+      "epsilon": 0.8795,
+      "val_revenue": 125987.2,
+      "seconds": 11.3
+    },
+    {
+      "round": 175,
+      "episodes": 11200,
+      "epsilon": 0.8593,
+      "val_revenue": 129034.45,
+      "seconds": 13.2
+    },
+    {
+      "round": 200,
+      "episodes": 12800,
+      "epsilon": 0.8391,
+      "val_revenue": 141846.1,
+      "seconds": 15.1
+    },
+    {
+      "round": 225,
+      "episodes": 14400,
+      "epsilon": 0.8188,
+      "val_revenue": 161182.35,
+      "seconds": 17.0
+    },
+    {
+      "round": 250,
+      "episodes": 16000,
+      "epsilon": 0.7986,
+      "val_revenue": 141849.05,
+      "seconds": 18.9
+    },
+    {
+      "round": 275,
+      "episodes": 17600,
+      "epsilon": 0.7784,
+      "val_revenue": 130899.5,
+      "seconds": 20.7
+    },
+    {
+      "round": 300,
+      "episodes": 19200,
+      "epsilon": 0.7582,
+      "val_revenue": 77037.75,
+      "seconds": 22.6
+    },
+    {
+      "round": 325,
+      "episodes": 20800,
+      "epsilon": 0.738,
+      "val_revenue": 82621.8,
+      "seconds": 24.5
+    },
+    {
+      "round": 350,
+      "episodes": 22400,
+      "epsilon": 0.7178,
+      "val_revenue": 82597.45,
+      "seconds": 26.4
+    },
+    {
+      "round": 375,
+      "episodes": 24000,
+      "epsilon": 0.6975,
+      "val_revenue": 79978.3,
+      "seconds": 28.2
+    },
+    {
+      "round": 400,
+      "episodes": 25600,
+      "epsilon": 0.6773,
+      "val_revenue": 82030.6,
+      "seconds": 30.1
+    },
+    {
+      "round": 425,
+      "episodes": 27200,
+      "epsilon": 0.6571,
+      "val_revenue": 69445.6,
+      "seconds": 32.0
+    },
+    {
+      "round": 450,
+      "episodes": 28800,
+      "epsilon": 0.6369,
+      "val_revenue": 62416.3,
+      "seconds": 34.8
+    },
+    {
+      "round": 475,
+      "episodes": 30400,
+      "epsilon": 0.6167,
+      "val_revenue": 63505.4,
+      "seconds": 37.8
+    },
+    {
+      "round": 500,
+      "episodes": 32000,
+      "epsilon": 0.5964,
+      "val_revenue": 71815.55,
+      "seconds": 41.8
+    },
+    {
+      "round": 525,
+      "episodes": 33600,
+      "epsilon": 0.5762,
+      "val_revenue": 64570.15,
+      "seconds": 45.2
+    },
+    {
+      "round": 550,
+      "episodes": 35200,
+      "epsilon": 0.556,
+      "val_revenue": 58851.65,
+      "seconds": 48.6
+    },
+    {
+      "round": 575,
+      "episodes": 36800,
+      "epsilon": 0.5358,
+      "val_revenue": 55347.05,
+      "seconds": 52.4
+    },
+    {
+      "round": 600,
+      "episodes": 38400,
+      "epsilon": 0.5156,
+      "val_revenue": 51730.0,
+      "seconds": 55.7
+    },
+    {
+      "round": 625,
+      "episodes": 40000,
+      "epsilon": 0.4953,
+      "val_revenue": 52037.8,
+      "seconds": 59.4
+    },
+    {
+      "round": 650,
+      "episodes": 41600,
+      "epsilon": 0.4751,
+      "val_revenue": 59029.35,
+      "seconds": 62.7
+    },
+    {
+      "round": 675,
+      "episodes": 43200,
+      "epsilon": 0.4549,
+      "val_revenue": 53905.1,
+      "seconds": 66.4
+    },
+    {
+      "round": 700,
+      "episodes": 44800,
+      "epsilon": 0.4347,
+      "val_revenue": 53818.8,
+      "seconds": 70.2
+    },
+    {
+      "round": 725,
+      "episodes": 46400,
+      "epsilon": 0.4145,
+      "val_revenue": 51248.1,
+      "seconds": 73.3
+    },
+    {
+      "round": 750,
+      "episodes": 48000,
+      "epsilon": 0.3943,
+      "val_revenue": 52447.5,
+      "seconds": 76.7
+    },
+    {
+      "round": 775,
+      "episodes": 49600,
+      "epsilon": 0.374,
+      "val_revenue": 50607.75,
+      "seconds": 80.4
+    },
+    {
+      "round": 800,
+      "episodes": 51200,
+      "epsilon": 0.3538,
+      "val_revenue": 58629.5,
+      "seconds": 82.8
+    },
+    {
+      "round": 825,
+      "episodes": 52800,
+      "epsilon": 0.3336,
+      "val_revenue": 49314.2,
+      "seconds": 85.8
+    },
+    {
+      "round": 850,
+      "episodes": 54400,
+      "epsilon": 0.3134,
+      "val_revenue": 50257.35,
+      "seconds": 89.3
+    },
+    {
+      "round": 875,
+      "episodes": 56000,
+      "epsilon": 0.2932,
+      "val_revenue": 54699.45,
+      "seconds": 93.1
+    },
+    {
+      "round": 900,
+      "episodes": 57600,
+      "epsilon": 0.2729,
+      "val_revenue": 50747.25,
+      "seconds": 96.4
+    },
+    {
+      "round": 925,
+      "episodes": 59200,
+      "epsilon": 0.2527,
+      "val_revenue": 53381.35,
+      "seconds": 100.0
+    },
+    {
+      "round": 950,
+      "episodes": 60800,
+      "epsilon": 0.2325,
+      "val_revenue": 65796.45,
+      "seconds": 103.6
+    },
+    {
+      "round": 975,
+      "episodes": 62400,
+      "epsilon": 0.2123,
+      "val_revenue": 70776.0,
+      "seconds": 107.0
+    },
+    {
+      "round": 1000,
+      "episodes": 64000,
+      "epsilon": 0.1921,
+      "val_revenue": 64607.95,
+      "seconds": 110.5
+    },
+    {
+      "round": 1025,
+      "episodes": 65600,
+      "epsilon": 0.1719,
+      "val_revenue": 68165.0,
+      "seconds": 113.8
+    },
+    {
+      "round": 1050,
+      "episodes": 67200,
+      "epsilon": 0.1516,
+      "val_revenue": 67970.3,
+      "seconds": 117.4
+    },
+    {
+      "round": 1075,
+      "episodes": 68800,
+      "epsilon": 0.1314,
+      "val_revenue": 64504.8,
+      "seconds": 120.2
+    },
+    {
+      "round": 1100,
+      "episodes": 70400,
+      "epsilon": 0.1112,
+      "val_revenue": 58626.4,
+      "seconds": 123.9
+    },
+    {
+      "round": 1125,
+      "episodes": 72000,
+      "epsilon": 0.091,
+      "val_revenue": 57723.9,
+      "seconds": 127.1
+    },
+    {
+      "round": 1150,
+      "episodes": 73600,
+      "epsilon": 0.0708,
+      "val_revenue": 51414.45,
+      "seconds": 130.7
+    },
+    {
+      "round": 1175,
+      "episodes": 75200,
+      "epsilon": 0.0505,
+      "val_revenue": 49999.0,
+      "seconds": 134.3
+    },
+    {
+      "round": 1200,
+      "episodes": 76800,
+      "epsilon": 0.0303,
+      "val_revenue": 49433.8,
+      "seconds": 137.9
+    },
+    {
+      "round": 1225,
+      "episodes": 78400,
+      "epsilon": 0.03,
+      "val_revenue": 49276.15,
+      "seconds": 141.8
+    },
+    {
+      "round": 1250,
+      "episodes": 80000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 145.1
+    },
+    {
+      "round": 1275,
+      "episodes": 81600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 147.0
+    },
+    {
+      "round": 1300,
+      "episodes": 83200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 148.9
+    },
+    {
+      "round": 1325,
+      "episodes": 84800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 150.8
+    },
+    {
+      "round": 1350,
+      "episodes": 86400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 152.6
+    },
+    {
+      "round": 1375,
+      "episodes": 88000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 154.5
+    },
+    {
+      "round": 1400,
+      "episodes": 89600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 156.4
+    },
+    {
+      "round": 1425,
+      "episodes": 91200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 158.3
+    },
+    {
+      "round": 1450,
+      "episodes": 92800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 160.2
+    },
+    {
+      "round": 1475,
+      "episodes": 94400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 162.1
+    },
+    {
+      "round": 1500,
+      "episodes": 96000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 164.0
+    },
+    {
+      "round": 1525,
+      "episodes": 97600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 166.7
+    },
+    {
+      "round": 1550,
+      "episodes": 99200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 174.9
+    },
+    {
+      "round": 1575,
+      "episodes": 100800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 182.5
+    },
+    {
+      "round": 1600,
+      "episodes": 102400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 187.9
+    },
+    {
+      "round": 1625,
+      "episodes": 104000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 191.3
+    },
+    {
+      "round": 1650,
+      "episodes": 105600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 194.8
+    },
+    {
+      "round": 1675,
+      "episodes": 107200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 198.9
+    },
+    {
+      "round": 1700,
+      "episodes": 108800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 202.1
+    },
+    {
+      "round": 1725,
+      "episodes": 110400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 207.5
+    },
+    {
+      "round": 1750,
+      "episodes": 112000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 210.6
+    },
+    {
+      "round": 1775,
+      "episodes": 113600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 213.8
+    },
+    {
+      "round": 1800,
+      "episodes": 115200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 217.3
+    },
+    {
+      "round": 1825,
+      "episodes": 116800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 220.5
+    },
+    {
+      "round": 1850,
+      "episodes": 118400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 223.5
+    },
+    {
+      "round": 1875,
+      "episodes": 120000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 226.4
+    },
+    {
+      "round": 1900,
+      "episodes": 121600,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 229.2
+    },
+    {
+      "round": 1925,
+      "episodes": 123200,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 232.0
+    },
+    {
+      "round": 1950,
+      "episodes": 124800,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 234.8
+    },
+    {
+      "round": 1975,
+      "episodes": 126400,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 237.6
+    },
+    {
+      "round": 2000,
+      "episodes": 128000,
+      "epsilon": 0.03,
+      "val_revenue": 49274.0,
+      "seconds": 240.3
+    }
+  ],
+  "best_val_revenue": 189175.85,
+  "train_seconds": 240.3,
+  "grad_steps": 239962,
+  "train_seed_family": 22000,
+  "val_seed_family": 11500,
+  "trained_on": {
+    "capacity": 2000,
+    "horizon": 60,
+    "price_min": 40.0,
+    "price_max": 200.0,
+    "price_step": 10.0,
+    "total_arrivals": 5200.0,
+    "demand_sigma": 0.25,
+    "arrival_decay": 0.019902285571748887,
+    "wtp_median": 95.0,
+    "wtp_sigma": 0.45,
+    "ref_init": 100.0,
+    "theta": 0.8,
+    "eta": 0.6,
+    "gamma": 0.3,
+    "kappa": 1.5,
+    "scarcity_frac": 0.1,
+    "arrival_shape_source": "calibrated:LAX-JFK_ATL-LGA_ORD-LGA"
+  },
+  "n_features": 7
+}

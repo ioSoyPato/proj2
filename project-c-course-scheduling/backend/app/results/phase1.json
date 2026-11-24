@@ -1,0 +1,528 @@
+{
+ "chosen": "monolithic",
+ "weights": {
+  "pref": 3.0,
+  "edge": 2.0,
+  "primary": 1.0,
+  "lab": 1.0,
+  "seat": 0.02
+ },
+ "timetable": [
+  {
+   "section": 0,
+   "prof": 1,
+   "room": 2,
+   "pattern": 11
+  },
+  {
+   "section": 1,
+   "prof": 3,
+   "room": 2,
+   "pattern": 3
+  },
+  {
+   "section": 2,
+   "prof": 7,
+   "room": 1,
+   "pattern": 2
+  },
+  {
+   "section": 3,
+   "prof": 7,
+   "room": 1,
+   "pattern": 4
+  },
+  {
+   "section": 4,
+   "prof": 8,
+   "room": 2,
+   "pattern": 4
+  },
+  {
+   "section": 5,
+   "prof": 6,
+   "room": 2,
+   "pattern": 1
+  },
+  {
+   "section": 6,
+   "prof": 5,
+   "room": 5,
+   "pattern": 3
+  },
+  {
+   "section": 7,
+   "prof": 9,
+   "room": 5,
+   "pattern": 10
+  },
+  {
+   "section": 8,
+   "prof": 11,
+   "room": 7,
+   "pattern": 9
+  },
+  {
+   "section": 9,
+   "prof": 11,
+   "room": 7,
+   "pattern": 11
+  },
+  {
+   "section": 10,
+   "prof": 4,
+   "room": 2,
+   "pattern": 12
+  },
+  {
+   "section": 11,
+   "prof": 5,
+   "room": 2,
+   "pattern": 9
+  },
+  {
+   "section": 12,
+   "prof": 2,
+   "room": 5,
+   "pattern": 11
+  },
+  {
+   "section": 13,
+   "prof": 2,
+   "room": 5,
+   "pattern": 4
+  },
+  {
+   "section": 14,
+   "prof": 3,
+   "room": 5,
+   "pattern": 2
+  },
+  {
+   "section": 15,
+   "prof": 1,
+   "room": 4,
+   "pattern": 9
+  },
+  {
+   "section": 16,
+   "prof": 12,
+   "room": 3,
+   "pattern": 10
+  },
+  {
+   "section": 17,
+   "prof": 12,
+   "room": 3,
+   "pattern": 3
+  },
+  {
+   "section": 18,
+   "prof": 9,
+   "room": 3,
+   "pattern": 8
+  },
+  {
+   "section": 19,
+   "prof": 9,
+   "room": 3,
+   "pattern": 11
+  },
+  {
+   "section": 20,
+   "prof": 10,
+   "room": 8,
+   "pattern": 9
+  },
+  {
+   "section": 21,
+   "prof": 10,
+   "room": 8,
+   "pattern": 1
+  },
+  {
+   "section": 22,
+   "prof": 0,
+   "room": 4,
+   "pattern": 4
+  },
+  {
+   "section": 23,
+   "prof": 0,
+   "room": 4,
+   "pattern": 12
+  },
+  {
+   "section": 24,
+   "prof": 2,
+   "room": 5,
+   "pattern": 13
+  },
+  {
+   "section": 25,
+   "prof": 8,
+   "room": 9,
+   "pattern": 0
+  },
+  {
+   "section": 26,
+   "prof": 6,
+   "room": 5,
+   "pattern": 7
+  },
+  {
+   "section": 27,
+   "prof": 6,
+   "room": 4,
+   "pattern": 3
+  },
+  {
+   "section": 28,
+   "prof": 13,
+   "room": 7,
+   "pattern": 4
+  },
+  {
+   "section": 29,
+   "prof": 4,
+   "room": 5,
+   "pattern": 9
+  },
+  {
+   "section": 30,
+   "prof": 3,
+   "room": 6,
+   "pattern": 11
+  },
+  {
+   "section": 31,
+   "prof": 11,
+   "room": 5,
+   "pattern": 8
+  },
+  {
+   "section": 32,
+   "prof": 5,
+   "room": 6,
+   "pattern": 0
+  },
+  {
+   "section": 33,
+   "prof": 13,
+   "room": 9,
+   "pattern": 13
+  },
+  {
+   "section": 34,
+   "prof": 10,
+   "room": 8,
+   "pattern": 4
+  },
+  {
+   "section": 35,
+   "prof": 7,
+   "room": 6,
+   "pattern": 7
+  },
+  {
+   "section": 36,
+   "prof": 0,
+   "room": 6,
+   "pattern": 6
+  }
+ ],
+ "monolithic": {
+  "result": {
+   "status": "optimal",
+   "objective": 13.42,
+   "bound": 13.42,
+   "gap": 0.0,
+   "solver": "HiGHS (scipy.optimize.milp)",
+   "seconds": 0.8292673749965616,
+   "n_vars": 7887,
+   "n_cons": 428,
+   "n_binary": 7887,
+   "note": "model has 7887 vars / 428 constraints > Gurobi size-limited license (2000); used HiGHS"
+  },
+  "breakdown": {
+   "counts": {
+    "pref": 0,
+    "edge": 0,
+    "primary": 11,
+    "lab": 0,
+    "seat": 121.0
+   },
+   "weighted_total": 13.42
+  },
+  "violations": []
+ },
+ "decomposed": {
+  "info": {
+   "status": "optimal",
+   "iterations": 1,
+   "cuts": 0,
+   "stage_a": [
+    {
+     "status": "optimal",
+     "objective": 11.0,
+     "bound": 11.0,
+     "gap": 0.0,
+     "solver": "Gurobi 14.0.0 (size-limited pip license)",
+     "seconds": 0.15336058297543786,
+     "n_vars": 1367,
+     "n_cons": 703,
+     "n_binary": 1367,
+     "note": ""
+    }
+   ],
+   "stage_b": {
+    "status": "optimal",
+    "objective": 2.660000000000001,
+    "bound": 2.660000000000001,
+    "gap": 0.0,
+    "solver": "Gurobi 14.0.0 (size-limited pip license)",
+    "seconds": 0.13294537499314174,
+    "n_vars": 215,
+    "n_cons": 98,
+    "n_binary": 215,
+    "note": ""
+   },
+   "seconds": 0.35521191600128077
+  },
+  "breakdown": {
+   "counts": {
+    "pref": 0,
+    "edge": 0,
+    "primary": 11,
+    "lab": 0,
+    "seat": 133.0
+   },
+   "weighted_total": 13.66
+  },
+  "timetable": [
+   {
+    "section": 0,
+    "prof": 1,
+    "room": 2,
+    "pattern": 11
+   },
+   {
+    "section": 1,
+    "prof": 3,
+    "room": 2,
+    "pattern": 2
+   },
+   {
+    "section": 2,
+    "prof": 7,
+    "room": 1,
+    "pattern": 2
+   },
+   {
+    "section": 3,
+    "prof": 7,
+    "room": 1,
+    "pattern": 4
+   },
+   {
+    "section": 4,
+    "prof": 8,
+    "room": 2,
+    "pattern": 4
+   },
+   {
+    "section": 5,
+    "prof": 6,
+    "room": 2,
+    "pattern": 3
+   },
+   {
+    "section": 6,
+    "prof": 5,
+    "room": 4,
+    "pattern": 3
+   },
+   {
+    "section": 7,
+    "prof": 9,
+    "room": 4,
+    "pattern": 11
+   },
+   {
+    "section": 8,
+    "prof": 10,
+    "room": 7,
+    "pattern": 9
+   },
+   {
+    "section": 9,
+    "prof": 10,
+    "room": 7,
+    "pattern": 1
+   },
+   {
+    "section": 10,
+    "prof": 4,
+    "room": 2,
+    "pattern": 12
+   },
+   {
+    "section": 11,
+    "prof": 5,
+    "room": 2,
+    "pattern": 9
+   },
+   {
+    "section": 12,
+    "prof": 2,
+    "room": 5,
+    "pattern": 4
+   },
+   {
+    "section": 13,
+    "prof": 2,
+    "room": 5,
+    "pattern": 11
+   },
+   {
+    "section": 14,
+    "prof": 3,
+    "room": 5,
+    "pattern": 3
+   },
+   {
+    "section": 15,
+    "prof": 1,
+    "room": 5,
+    "pattern": 9
+   },
+   {
+    "section": 16,
+    "prof": 12,
+    "room": 4,
+    "pattern": 10
+   },
+   {
+    "section": 17,
+    "prof": 12,
+    "room": 3,
+    "pattern": 3
+   },
+   {
+    "section": 18,
+    "prof": 9,
+    "room": 4,
+    "pattern": 8
+   },
+   {
+    "section": 19,
+    "prof": 9,
+    "room": 3,
+    "pattern": 10
+   },
+   {
+    "section": 20,
+    "prof": 11,
+    "room": 8,
+    "pattern": 9
+   },
+   {
+    "section": 21,
+    "prof": 11,
+    "room": 8,
+    "pattern": 8
+   },
+   {
+    "section": 22,
+    "prof": 0,
+    "room": 4,
+    "pattern": 12
+   },
+   {
+    "section": 23,
+    "prof": 0,
+    "room": 4,
+    "pattern": 4
+   },
+   {
+    "section": 24,
+    "prof": 1,
+    "room": 5,
+    "pattern": 13
+   },
+   {
+    "section": 25,
+    "prof": 8,
+    "room": 9,
+    "pattern": 0
+   },
+   {
+    "section": 26,
+    "prof": 6,
+    "room": 5,
+    "pattern": 7
+   },
+   {
+    "section": 27,
+    "prof": 6,
+    "room": 4,
+    "pattern": 1
+   },
+   {
+    "section": 28,
+    "prof": 13,
+    "room": 7,
+    "pattern": 4
+   },
+   {
+    "section": 29,
+    "prof": 4,
+    "room": 3,
+    "pattern": 9
+   },
+   {
+    "section": 30,
+    "prof": 3,
+    "room": 6,
+    "pattern": 11
+   },
+   {
+    "section": 31,
+    "prof": 11,
+    "room": 3,
+    "pattern": 11
+   },
+   {
+    "section": 32,
+    "prof": 5,
+    "room": 6,
+    "pattern": 0
+   },
+   {
+    "section": 33,
+    "prof": 13,
+    "room": 9,
+    "pattern": 13
+   },
+   {
+    "section": 34,
+    "prof": 10,
+    "room": 8,
+    "pattern": 4
+   },
+   {
+    "section": 35,
+    "prof": 7,
+    "room": 6,
+    "pattern": 7
+   },
+   {
+    "section": 36,
+    "prof": 0,
+    "room": 6,
+    "pattern": 6
+   }
+  ],
+  "violations": []
+ }
+}
